@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#testing-btn {
+    background-color: rgba(255,255,255,0.5);
+    width: 60px;
+    height: 20px;
+    color: #303030;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    font-family: 'Century Gothic';
+    padding: 4px;
+    cursor: pointer;
+    transition: ease all 0.2s;
+}
+
+#testing-btn:hover {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.container {
+     width: 100vw !important;
+     height: 100vh !important;
+     background-size: cover !important;
+     background-position: center !important;
+ }
+
+ .overlay {
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+ }
+
+ .items-wrapper {
+     position: absolute;
+     width: max-content;
+     height: min-content;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     margin: auto;
+     display: grid;
+     grid-template-columns: auto auto;
+     grid-column-gap: 53px;
+ }
+
+ #artwork {
+     height: 300px !important;
+     width: 300px !important;
+ }
+
+ .rightSide {
+     width: 640px;
+ }
+
+ #title , #artist {
+    margin: 0px;
+    padding: 0px;
+ }
+
+ #title {
+     color: white;
+     font-size: 65px;
+     padding-top: 14px;
+     font-family: Montserrat;
+     font-weight: bold;
+ }
+
+ #artist {
+     font-size: 40px;
+     color: rgba(240, 240, 240, 0.85);
+     font-family: 'Segoe UI';
+ }
+
+ #controls {
+     margin-top:31px; 
+ }
+
+ #controls img{
+     display: inline-block; 
+     cursor: pointer;   
+ }
+
+ #controls img:first-child {
+     margin-right: 35px;
+ }
+
+ #controls img:last-child{
+     margin-left: 35px;
+ }
+
+ #controls img:first-child, #controls img:last-child {
+    height: 28px;
+    line-height: 35px;
+ }
+
+ #controls img:nth-child(2), #controls img:nth-child(4) {
+     height: 30px;
+     line-height: 35px;
+ }
+
+ #controls img:nth-child(3) {
+     height: 35px;
+     margin: 0px 33px;
+ }
+
+ #seekar {
+     width: 640px;
+ }
+
+ #seekbar progress {
+    -webkit-appearance: none !important;
+    border: none !important;
+    height: 8px;
+    width: 640px;
+    border-radius: 8px;
+    transition: ease value 0.5s;
+    margin-top: 35px;
+    cursor: pointer;
+ }
+
+ #seekbar progress::-webkit-progress-bar {
+    background: transparent;
+}
+
+progress::-webkit-progress-value {
+    transition: ease width 0.15s;
+    background: #fff;
+    border-radius: 8px;
+    height: 10px;
+    margin-top: -1.5px;
+    width: 100px;
+}
+
+#time-elapsed, #duration {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Century Gothic';
+    margin-top: 6px;
+    float: left;
+}
+
+#duration {
+    float: right;
+}

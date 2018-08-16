@@ -1,1 +1,36 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Goopy</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"><link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet"><link href="styles.d41d8cd98f00b204e980.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script src="https://use.fontawesome.com/8aa0402897.js"></script><script type="text/javascript" src="inline.f4f75307a65d26b04cd1.bundle.js"></script><script type="text/javascript" src="polyfills.ad37cd45a71cb38eee76.bundle.js"></script><script type="text/javascript" src="main.0cb94ffc0b9d34d27c58.bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Music UI</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="overlay" id="grad-overlay"></div>
+        <div class="items-wrapper">
+            <img src="" alt="" id="artwork">
+            <div class="rightSide">
+                <p id="title"></p>
+                <p id="artist"></p>
+                <div id="controls">
+                    <img src="resources/icons/shuffle.svg">
+                    <img src="resources/icons/previous.svg">
+                    <img src="resources/icons/play-pause.svg">
+                    <img src="resources/icons/next.svg">
+                    <img src="resources/icons/repeat.svg">
+                </div>
+                <div id="seekbar">
+                    <progress id="progress-bar" value="70" max="100" min=10 onclick="seek(event);"></progress>
+                    <p id="time-elapsed">3:24</p> <p id="duration">4:20</p>
+                </div>
+            </div>
+        </div>
+        <div id="testing-btn">next</div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/Vibrant.js"></script>
+</body>
+</html>
