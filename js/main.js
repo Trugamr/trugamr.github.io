@@ -42,7 +42,7 @@ seekbar.style.background = lightVibrantColor;
 
 //seeking to 
 function seek(e) {
-    this.seekbar.value = e.offsetX/e.srcElement.clientWidth * 100; 
+    this.seekbar.value = e.offsetX/e.target.clientWidth * 100; 
     // console.log(e);
 }
 

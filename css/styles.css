@@ -31,6 +31,9 @@ body {
      height: 100vh !important;
      background-size: cover !important;
      background-position: center !important;
+     display: flex;
+     justify-content: center;
+     align-items: center;
  }
 
  .overlay {
@@ -43,13 +46,6 @@ body {
 
  .items-wrapper {
      position: absolute;
-     width: max-content;
-     height: min-content;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     margin: auto;
      display: grid;
      grid-template-columns: auto auto;
      grid-column-gap: 53px;
@@ -130,17 +126,25 @@ body {
     cursor: pointer;
  }
 
- #seekbar progress::-webkit-progress-bar {
+#seekbar progress::-webkit-progress-bar {
     background: transparent;
 }
 
-progress::-webkit-progress-value {
+/*firefox changing actual seekbar*/
+#seekbar progress::-moz-progress-bar {
+    background: white;
+    background: #fff;
+    border-radius: 8px;
+    height: 10px;
+    margin-top: -1px;    
+}
+
+#seekbar progress::-webkit-progress-value {
     transition: ease width 0.15s;
     background: #fff;
     border-radius: 8px;
     height: 10px;
-    margin-top: -1.5px;
-    width: 100px;
+    margin-top: -1px;
 }
 
 #time-elapsed, #duration {
