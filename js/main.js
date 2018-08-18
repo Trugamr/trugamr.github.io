@@ -141,7 +141,7 @@ function getArtwork(rel_id) {
     var artworkData ;
     var artwork = document.getElementById('artwork');
     var artworkRequest = new XMLHttpRequest();
-    artworkRequest.open('GET', 'http://coverartarchive.org/release/' + rel_id);
+    artworkRequest.open('GET', 'https://coverartarchive.org/release/' + rel_id);
     artworkRequest.onload = function() {
         console.log(this.status);
         if(this.status == 404) {
