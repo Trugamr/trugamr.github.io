@@ -34,7 +34,8 @@ body {
      display: flex;
      justify-content: center;
      align-items: center;
- }
+     overflow: hidden;
+}
 
  .overlay {
      position: absolute;
@@ -71,6 +72,9 @@ body {
      padding-top: 14px;
      font-family: Montserrat;
      font-weight: bold;
+     overflow: hidden;
+     white-space: nowrap;
+     text-overflow: ellipsis;
  }
 
  #artist {
@@ -156,4 +160,66 @@ body {
 
 #duration {
     float: right;
+}
+
+#menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    opacity: 0.6;
+    font-size: 20px;
+    transition: ease opacity 0.2s;
+    cursor: pointer;
+}
+
+#menu-btn:hover {
+    opacity: 1;
+}
+
+#sidebar {
+    height: 100vh;
+    width: 220px;
+    background-color: white;
+    position: fixed;
+    right: 0;
+    transform: translateX(260px);
+    transition: ease transform 0.25s;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.show {
+    transform: translateX(0px) !important;
+}
+
+#back-btn {
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #505050;
+}
+
+.searchBox {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.searchBox input {
+    width: 140px;
+    margin-right: 10px;
+    padding: 5px 10px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 10px;
+    font-family: Montserrat;
+    cursor: pointer;
+}
+
+#search-icon {
+    cursor: pointer;
 }
