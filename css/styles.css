@@ -37,98 +37,102 @@ body {
      overflow: hidden;
 }
 
- .overlay {
-     position: absolute;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
- }
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
- .items-wrapper {
-     position: absolute;
-     display: grid;
-     grid-template-columns: auto auto;
-     grid-column-gap: 53px;
- }
+.items-wrapper {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 53px;
+}
 
- #artwork {
-     height: 300px !important;
-     width: 300px !important;
- }
+#artwork {
+    height: 300px !important;
+    width: 300px !important;
+}
 
- .rightSide {
-     width: 640px;
- }
-
- #title , #artist {
-    margin: 0px;
-    padding: 0px;
- }
-
- #title {
-     color: white;
-     font-size: 65px;
-     padding-top: 14px;
-     font-family: Montserrat;
-     font-weight: bold;
-     overflow: hidden;
-     white-space: nowrap;
-     text-overflow: ellipsis;
- }
-
- #artist {
-     font-size: 40px;
-     color: rgba(240, 240, 240, 0.85);
-     font-family: 'Segoe UI';
- }
-
- #controls {
-     margin-top:31px; 
- }
-
- #controls img{
-     display: inline-block; 
-     cursor: pointer;   
- }
-
- #controls img:first-child {
-     margin-right: 35px;
- }
-
- #controls img:last-child{
-     margin-left: 35px;
- }
-
- #controls img:first-child, #controls img:last-child {
-    height: 28px;
-    line-height: 35px;
- }
-
- #controls img:nth-child(2), #controls img:nth-child(4) {
-     height: 30px;
-     line-height: 35px;
- }
-
- #controls img:nth-child(3) {
-     height: 35px;
-     margin: 0px 33px;
- }
-
- #seekar {
-     width: 640px;
- }
-
- #seekbar progress {
-    -webkit-appearance: none !important;
-    border: none !important;
-    height: 8px;
+.rightSide {
     width: 640px;
-    border-radius: 8px;
-    transition: ease value 0.5s;
-    margin-top: 35px;
+}
+
+#title , #artist {
+margin: 0px;
+padding: 0px;
+}
+
+#title {
+    color: white;
+    font-size: 65px;
+    padding-top: 14px;
+    font-family: Montserrat;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#artist {
+    font-size: 40px;
+    color: rgba(240, 240, 240, 0.85);
+    font-family: 'Segoe UI';
+}
+
+#controls {
+    margin-top:31px; 
+}
+
+#controls img{
+    display: inline-block; 
+    cursor: pointer;   
+}
+
+#controls img:first-child {
+    margin-right: 35px;
+}
+
+#controls img:last-child{
+    margin-left: 35px;
+}
+
+#controls img:first-child, #controls img:last-child {
+height: 28px;
+line-height: 35px;
+}
+
+#controls img:nth-child(2), #controls img:nth-child(4) {
+    height: 30px;
+    line-height: 35px;
+}
+/* for old
+#controls img:nth-child(3) {
+    height: 35px;
+    margin: 0px 33px;
+} */
+
+#play-pause-btn {
+    margin: 0px 33px -2px 33px;
     cursor: pointer;
- }
+}
+
+#seekbar {
+    width: 640px;
+}
+
+#seekbar progress {
+-webkit-appearance: none !important;
+border: none !important;
+height: 8px;
+width: 640px;
+border-radius: 8px;
+margin-top: 35px;
+cursor: pointer;
+}
 
 #seekbar progress::-webkit-progress-bar {
     background: transparent;
@@ -180,13 +184,14 @@ body {
 #sidebar {
     height: 100vh;
     width: 220px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     position: fixed;
     right: 0;
     transform: translateX(260px);
     transition: ease transform 0.25s;
     padding: 10px;
     overflow-y: auto;
+    box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.1);
 }
 
 .show {
@@ -196,24 +201,39 @@ body {
 #back-btn {
     cursor: pointer;
     font-size: 20px;
-    margin-top: 10px;
     color: #505050;
+    width: 220px;
+    margin-left: -10px;
+    padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
 }
 
 .searchBox {
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
+    height: 40px;
+    width: 210px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
 }
 
 .searchBox input {
-    width: 140px;
+    width: 150px;
+    height: 30px;
+    margin: 0px;
     margin-right: 10px;
     padding: 5px 10px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    float: left;
+}
+
+.searchBox input:focus {
+    outline: none;
 }
 
 .card {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
     padding: 20px;
     margin-top: 10px;
     font-family: Montserrat;
@@ -221,5 +241,14 @@ body {
 }
 
 #search-icon {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin-left: -16px;
     cursor: pointer;
 }

@@ -19,13 +19,17 @@
                 <div id="controls">
                     <img src="resources/icons/shuffle.svg">
                     <img src="resources/icons/previous.svg">
-                    <img src="resources/icons/play-pause.svg">
+                    <svg fill="#ffffff" id="play-pause-btn" width="35px" viewBox="10 10 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity=0 id="pause-btn" d="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" />
+                        <path id="play-btn"  d="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28" />
+                    </svg>                    
+                    <!-- <img src="resources/icons/play-pause.svg"> -->
                     <img src="resources/icons/next.svg">
                     <img src="resources/icons/repeat.svg">
                 </div>
                 <div id="seekbar">
-                    <progress id="progress-bar" value="70" max="100" min=10 onclick="seek(event);"></progress>
-                    <p id="time-elapsed">3:24</p> <p id="duration">4:20</p>
+                    <progress id="progress-bar" value="70" max="100" onclick="seek(event);"></progress>
+                    <p id="time-elapsed">03:24</p> <p id="duration">4:20</p>
                 </div>
             </div>
         </div>
@@ -45,7 +49,8 @@
             </div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/snap.svg-min.js"></script>
     <script src="js/Vibrant.js"></script>
+    <script src="js/main.js"></script>    
 </body>
 </html>
