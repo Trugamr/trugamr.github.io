@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <title>Music UI</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="overlay" id="grad-overlay"></div>
+        <div class="items-wrapper">
+            <img src="" alt="" id="artwork">
+            <div class="rightSide">
+                <p id="title"></p>
+                <p id="artist"></p>
+                <div id="controls">
+                    <img src="resources/icons/shuffle.svg">
+                    <img src="resources/icons/previous.svg">
+                    <svg fill="#ffffff" id="play-pause-btn" width="35px" viewBox="10 10 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity=0 id="pause-btn" d="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" />
+                        <path id="play-btn"  d="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28" />
+                    </svg>                    
+                    <!-- <img src="resources/icons/play-pause.svg"> -->
+                    <img src="resources/icons/next.svg">
+                    <img src="resources/icons/repeat.svg">
+                </div>
+                <div id="seekbar">
+                    <progress id="progress-bar" value="70" max="100" onclick="seek(event);"></progress>
+                    <p id="time-elapsed">03:24</p> <p id="duration">4:20</p>
+                </div>
+            </div>
+        </div>
+        <div id="testing-btn">next</div>
+        
+        <div id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div id="sidebar">
+            <i class="fa fa-arrow-left" id="back-btn"></i>
+            <div class="searchBox">
+                <input type="text" id="search" placeholder="search">
+                <i class="fa fa-search" id="search-icon" onclick="searchMusic()"></i>
+            </div>
+            <div class="results" id="results">
+            </div>
+        </div>
+    </div>
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/Vibrant.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

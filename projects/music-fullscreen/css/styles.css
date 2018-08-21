@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#testing-btn {
+    background-color: rgba(255,255,255,0.5);
+    width: 60px;
+    height: 20px;
+    color: #303030;
+    text-align: center;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    font-family: 'Century Gothic';
+    padding: 4px;
+    cursor: pointer;
+    transition: ease all 0.2s;
+}
+
+#testing-btn:hover {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.container {
+     width: 100vw !important;
+     height: 100vh !important;
+     background-size: cover !important;
+     background-position: center !important;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.items-wrapper {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 53px;
+}
+
+#artwork {
+    height: 300px !important;
+    width: 300px !important;
+}
+
+.rightSide {
+    width: 640px;
+}
+
+#title , #artist {
+margin: 0px;
+padding: 0px;
+}
+
+#title {
+    color: white;
+    font-size: 65px;
+    padding-top: 14px;
+    font-family: Montserrat;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#artist {
+    font-size: 40px;
+    color: rgba(240, 240, 240, 0.85);
+    font-family: 'Segoe UI';
+}
+
+#controls {
+    margin-top:31px; 
+}
+
+#controls img{
+    display: inline-block; 
+    cursor: pointer;   
+}
+
+#controls img:first-child {
+    margin-right: 35px;
+}
+
+#controls img:last-child{
+    margin-left: 35px;
+}
+
+#controls img:first-child, #controls img:last-child {
+height: 28px;
+line-height: 35px;
+}
+
+#controls img:nth-child(2), #controls img:nth-child(4) {
+    height: 30px;
+    line-height: 35px;
+}
+/* for old
+#controls img:nth-child(3) {
+    height: 35px;
+    margin: 0px 33px;
+} */
+
+#play-pause-btn {
+    margin: 0px 33px -2px 33px;
+    cursor: pointer;
+}
+
+#seekbar {
+    width: 640px;
+}
+
+#seekbar progress {
+-webkit-appearance: none !important;
+border: none !important;
+height: 8px;
+width: 640px;
+border-radius: 8px;
+margin-top: 35px;
+cursor: pointer;
+}
+
+#seekbar progress::-webkit-progress-bar {
+    background: transparent;
+}
+
+/*firefox changing actual seekbar*/
+#seekbar progress::-moz-progress-bar {
+    background: white;
+    background: #fff;
+    border-radius: 8px;
+    height: 10px;
+    margin-top: -1px;    
+}
+
+#seekbar progress::-webkit-progress-value {
+    transition: ease width 0.15s;
+    background: #fff;
+    border-radius: 8px;
+    height: 10px;
+    margin-top: -1px;
+}
+
+#time-elapsed, #duration {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Century Gothic';
+    margin-top: 6px;
+    float: left;
+}
+
+#duration {
+    float: right;
+}
+
+#menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    opacity: 0.6;
+    font-size: 20px;
+    transition: ease opacity 0.2s;
+    cursor: pointer;
+}
+
+#menu-btn:hover {
+    opacity: 1;
+}
+
+#sidebar {
+    height: 100vh;
+    width: 220px;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    right: 0;
+    transform: translateX(260px);
+    transition: ease transform 0.25s;
+    padding: 10px;
+    overflow-y: auto;
+    box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.1);
+}
+
+.show {
+    transform: translateX(0px) !important;
+}
+
+#back-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: #505050;
+    width: 220px;
+    margin-left: -10px;
+    padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
+}
+
+.searchBox {
+    height: 40px;
+    width: 210px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+}
+
+.searchBox input {
+    width: 150px;
+    height: 30px;
+    margin: 0px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    float: left;
+}
+
+.searchBox input:focus {
+    outline: none;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-top: 10px;
+    font-family: Montserrat;
+    cursor: pointer;
+}
+
+#search-icon {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    margin-left: -16px;
+    cursor: pointer;
+}
