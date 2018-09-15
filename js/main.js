@@ -7,8 +7,9 @@ var controls = document.getElementById('controls');
 var seekbar = document.getElementById('progress-bar');
 
 var lightVibrantColor = 'rgb(215, 43, 105)';
-var backgroundImageUrl ='../resources/images/backdrop_5.jpg';
-var artworkUrl = '../resources/images/art_5.jpg';
+var backgroundImageUrl ='resources/images/backdrop_5.jpg';
+//methods cant use this image when viewing file locally, file has to be viewed in a live server
+var artworkUrl = 'resources/images/art_5.jpg';
 var musicTitle = 'Cruel';
 var musicArtist = 'Foxes';
 
@@ -39,8 +40,10 @@ function seek(e) {
 //updating vibrant colors
 function updateColors(extractedColors) {
     //copying Vibrant color values array
-    if(extractedColors.Vibrant == undefined) {
+    if(extractedColors.Vibrant == undefined && extractedColors.LightVibrant != undefined) {
         var rgbValues = extractedColors.LightVibrant;
+    } else if(extractedColors.LightVibrant == undefined && extractedColors.Vibrant == undefined) {
+        var rgbValues = extractedColors.Muted;
     } else {
         var rgbValues = extractedColors.Vibrant;
     }
@@ -186,7 +189,7 @@ function getArtwork(rel_id) {
         console.log('Artwork Status', this.status);
         if(this.status == 404) {
             //return sad face
-            artwork.src = ('../resources/images/art_0.jpg');
+            artwork.src = ('resources/images/art_0.jpg');
         } else {
             var artworkData = JSON.parse(artworkRequest.responseText);
             artwork.src = artworkData.images[0].thumbnails.large;
@@ -207,11 +210,11 @@ function getArtistBackground(artistId) {
         console.log('Background Status', this.status);
         if(this.status == 404) {
             //changing background artist image
-            background.style = 'background: url(\' ' + '../resources/images/backdrop_0.jpg' + ' \'); ';
+            background.style = 'background: url(\' ' + 'resources/images/backdrop_0.jpg' + ' \'); ';
         } else {
             respData = JSON.parse(this.responseText);
             if(respData.artistbackground == undefined) {
-                background.style = 'background: url(\' ' + '../resources/images/backdrop_0.jpg' + ' \'); ';
+                background.style = 'background: url(\' ' + 'resources/images/backdrop_0.jpg' + ' \'); ';
             } else {
                 randomIndex = Math.floor(Math.random() * respData.artistbackground.length);
                 background.style = 'background: url(\' ' + respData.artistbackground[randomIndex].url + ' \'); ';
@@ -267,43 +270,43 @@ document.getElementById('back-btn').addEventListener('click', function() {
 //preview-testing function
 var testing = [
     {
-        bg: '../resources/images/backdrop_1.jpg',
-        art: '../resources/images/art_1.jpg',
+        bg: 'resources/images/backdrop_1.jpg',
+        art: 'resources/images/art_1.jpg',
         color: 'rgb(203, 40, 131)',
         title: 'Glorious',
         artist: 'Arty'
     },
     {
-        bg: '../resources/images/backdrop_4.jpg',
-        art: '../resources/images/art_4.jpg',
+        bg: 'resources/images/backdrop_4.jpg',
+        art: 'resources/images/art_4.jpg',
         color: 'rgb(251, 243, 4)',
         title: 'Rude',
         artist: 'MAGIC!'
     },
     {
-        bg: '../resources/images/backdrop_3.jpg',
-        art: '../resources/images/art_3.jpg',
+        bg: 'resources/images/backdrop_3.jpg',
+        art: 'resources/images/art_3.jpg',
         color: 'rgb(13, 177, 225)',
         title: 'Shape of You',
         artist: 'Ed Sheeran'
     },
     {
-        bg: '../resources/images/backdrop_5.jpg',
-        art: '../resources/images/art_5.jpg',
+        bg: 'resources/images/backdrop_5.jpg',
+        art: 'resources/images/art_5.jpg',
         color: 'rgb(215, 43, 105)',
         title: 'Cruel',
         artist: 'Foxes'
     },
     {
-        bg: '../resources/images/backdrop_7.jpg',
-        art: '../resources/images/art_7.jpg',
+        bg: 'resources/images/backdrop_7.jpg',
+        art: 'resources/images/art_7.jpg',
         color: 'rgb(240, 104, 69)',
         title: 'Honey',
         artist: 'Kehlani'
     },
     {
-        bg: '../resources/images/backdrop_8.jpg',
-        art: '../resources/images/art_8.jpg',
+        bg: 'resources/images/backdrop_8.jpg',
+        art: 'resources/images/art_8.jpg',
         color: 'rgb(255, 255, 255)',
         title: 'Andromeda',
         artist: 'Gorillaz'
